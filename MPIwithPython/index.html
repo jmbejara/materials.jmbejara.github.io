@@ -1,0 +1,190 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>An Introduction to Parallel Programming with MPI and Python &#8212; A Python Introduction to Parallel Programming with MPI 1.0.2 documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Preface" href="preface.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="preface.html" title="Preface"
+             accesskey="N">next</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">A Python Introduction to Parallel Programming with MPI 1.0.2 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="an-introduction-to-parallel-programming-with-mpi-and-python">
+<h1>An Introduction to Parallel Programming with MPI and Python<a class="headerlink" href="#an-introduction-to-parallel-programming-with-mpi-and-python" title="Permalink to this headline">¶</a></h1>
+<p>A short introduction and tutorial to distributed memory computing with Python.
+Although HPC projects should usually be written in faster, compiled languages,
+like C or Fortran, Python is an excellent tool for algorithm development and
+proof of concept. This is especially true in parallel programming, where code
+becomes especially complex.</p>
+<p>In this tutorial, we give an short overview of parallel computing and introduce
+MPI.  We use Python to demonstrate applications and introduce the methods of
+the interface.</p>
+<dl class="simple">
+<dt>There are TODO’s in this document:</dt><dd><ul class="simple">
+<li><p>Allreduce and Reduce theoretically take the same amount of time. Include a picture of the butterfly communication structure.</p></li>
+</ul>
+</dd>
+<dt>TODO not listed:</dt><dd><ul class="simple">
+<li><p>note how you can use mpi4py on you own computer (serially, for testing purposes)</p></li>
+<li><p>stuff about I/O</p></li>
+<li><p>how to properly time a parallel function</p></li>
+<li><p>Section of chapter on parallel libraries (how this is accomplished by communicators. See end of preface.)</p></li>
+<li><p>show how you can run unbuffered. Then, if you would like to print, you must use the format of print where you concatenate string, not seperate them with commas</p></li>
+</ul>
+</dd>
+</dl>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="preface.html">Preface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="preface.html#why-mpi-for-python-mpi4py">Why <em>MPI for Python</em> (mpi4py)?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="preface.html#why-this-tutorial">Why this tutorial?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">An Overview of Parallel Computing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#single-processor-limits">Single Processor Limits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#flynn-s-taxonomy">Flynn’s Taxonomy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#piplining">Piplining</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#simd-systems">SIMD Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#general-mimd">General MIMD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#message-passing">Message Passing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#mpi-the-message-passing-interface">MPI: the Message Passing Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#exercises">Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="introMPI.html">Introduction to MPI</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="introMPI.html#hello-world">Hello World</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introMPI.html#execution">Execution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introMPI.html#the-communicator">The Communicator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introMPI.html#finding-out-about-the-rest-of-the-world">Finding Out About the Rest of the World</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introMPI.html#get-size-and-get-rank">Get_size() and Get_rank()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introMPI.html#seperate-codes-in-one-file">Seperate Codes in One File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introMPI.html#exercises">Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pointToPoint.html">Point-to-Point Communication</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pointToPoint.html#send-and-recv">Send(…) and Recv(…)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pointToPoint.html#the-trapezoidal-rule">The Trapezoidal Rule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pointToPoint.html#parallelizing-the-trapezoidal-rule">Parallelizing the Trapezoidal Rule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pointToPoint.html#load-balancing">Load Balancing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pointToPoint.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pointToPoint.html#exercises">Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="collectiveCom.html">Collective Communication</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="collectiveCom.html#tree-structured-computation">Tree-Structured Computation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="collectiveCom.html#the-parallel-trapezoidal-rule-2-0">The Parallel Trapezoidal Rule 2.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="collectiveCom.html#reduce-and-allreduce">Reduce(…) and Allreduce(…)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="collectiveCom.html#dot-product">Dot Product</a></li>
+<li class="toctree-l2"><a class="reference internal" href="collectiveCom.html#bcast-and-scatter">Bcast(…) and Scatter(…)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="collectiveCom.html#a-closer-look-at-broadcast-and-reduce">A Closer Look at Broadcast and Reduce</a></li>
+<li class="toctree-l2"><a class="reference internal" href="collectiveCom.html#scatterv-and-gatherv">Scatterv(…) and Gatherv(…)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="collectiveCom.html#exercises">Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="IOandDebugging.html">I/O, Debugging, and Performance</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="IOandDebugging.html#i-o">I/O</a></li>
+<li class="toctree-l2"><a class="reference internal" href="IOandDebugging.html#debugging">Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="IOandDebugging.html#performance-speedup-and-efficiency">Performance: Speedup and Efficiency</a></li>
+<li class="toctree-l2"><a class="reference internal" href="IOandDebugging.html#wtime-and-wtick">Wtime() and Wtick()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="IOandDebugging.html#amdahl-s-law">Amdahl’s Law</a></li>
+<li class="toctree-l2"><a class="reference internal" href="IOandDebugging.html#exercises">Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="appendix.html">Appendix</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="appendix.html#instance-methods-of-comm-class">Instance Methods of <em>Comm</em> Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendix.html#the-op-class-reduction-operations">The <em>Op</em> Class (Reduction Operations)</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">An Introduction to Parallel Programming with MPI and Python</a></li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+
+  <h4>Next topic</h4>
+  <p class="topless"><a href="preface.html"
+                        title="next chapter">Preface</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="preface.html" title="Preface"
+             >next</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">A Python Introduction to Parallel Programming with MPI 1.0.2 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2013, Jeremy Bejarano.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.1.
+    </div>
+  </body>
+</html>
