@@ -4,41 +4,33 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>An Overview of Parallel Computing &#8212; A Python Introduction to Parallel Programming with MPI 1.0.2 documentation</title>
-    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <title>An Overview of Parallel Computing &#8212; A Python Introduction to Parallel Programming with MPI 1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/language_data.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Introduction to MPI" href="introMPI.html" />
-    <link rel="prev" title="Preface" href="preface.html" /> 
+    <link rel="prev" title="Preface" href="preface.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
   </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="introMPI.html" title="Introduction to MPI"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="preface.html" title="Preface"
-             accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">A Python Introduction to Parallel Programming with MPI 1.0.2 documentation</a> &#187;</li> 
-      </ul>
-    </div>  
+  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
+          
+
           <div class="body" role="main">
             
   <div class="section" id="an-overview-of-parallel-computing">
@@ -94,38 +86,50 @@
 
 
           </div>
+          
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">An Overview of Parallel Computing</a><ul>
-<li><a class="reference internal" href="#single-processor-limits">Single Processor Limits</a></li>
-<li><a class="reference internal" href="#flynn-s-taxonomy">Flynn’s Taxonomy</a></li>
-<li><a class="reference internal" href="#piplining">Piplining</a></li>
-<li><a class="reference internal" href="#simd-systems">SIMD Systems</a></li>
-<li><a class="reference internal" href="#general-mimd">General MIMD</a></li>
-<li><a class="reference internal" href="#message-passing">Message Passing</a></li>
-<li><a class="reference internal" href="#mpi-the-message-passing-interface">MPI: the Message Passing Interface</a></li>
-<li><a class="reference internal" href="#exercises">Exercises</a></li>
+<h1 class="logo"><a href="index.html">A Python Introduction to Parallel Programming with MPI</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="preface.html">Preface</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">An Overview of Parallel Computing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#single-processor-limits">Single Processor Limits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#flynn-s-taxonomy">Flynn’s Taxonomy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#piplining">Piplining</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#simd-systems">SIMD Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#general-mimd">General MIMD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#message-passing">Message Passing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mpi-the-message-passing-interface">MPI: the Message Passing Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exercises">Exercises</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="introMPI.html">Introduction to MPI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pointToPoint.html">Point-to-Point Communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collectiveCom.html">Collective Communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="IOandDebugging.html">I/O, Debugging, and Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix.html">Appendix</a></li>
 </ul>
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="preface.html"
-                        title="previous chapter">Preface</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="introMPI.html"
-                        title="next chapter">Introduction to MPI</a></p>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/overview.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="preface.html" title="previous chapter">Preface</a></li>
+      <li>Next: <a href="introMPI.html" title="next chapter">Introduction to MPI</a></li>
+  </ul></li>
+</ul>
+</div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <div class="searchformwrapper">
@@ -136,28 +140,32 @@
     </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="introMPI.html" title="Introduction to MPI"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="preface.html" title="Preface"
-             >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">A Python Introduction to Parallel Programming with MPI 1.0.2 documentation</a> &#187;</li> 
-      </ul>
+    <div class="footer">
+      &copy;2019, Jeremy Bejarano.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/overview.rst.txt"
+          rel="nofollow">Page source</a>
     </div>
-    <div class="footer" role="contentinfo">
-        &#169; Copyright 2013, Jeremy Bejarano.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.1.
-    </div>
+
+    
+
+    
   </body>
 </html>
